@@ -129,13 +129,12 @@ function ddo_days_out_save_meta_box_data( $post_id )
 			return;
 	}
 
-	if ( ! isset( $_POST['ddo_event_date'] ) )
+	if ( ! isset( $_POST['ddo_address'] ) )
 		return;
 
-	$ddo_event_date = $_POST['ddo_event_date'];
-	$event_date = strtotime( $ddo_event_date );
+	$address = $_POST['ddo_address'];
 
-	update_post_meta( $post_id, '_ddo_event_date', $event_date );
+	update_post_meta( $post_id, '_ddo_address', $address );
 
 }
 add_action( 'save_post', 'ddo_days_out_save_meta_box_data' );
