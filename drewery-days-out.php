@@ -3,7 +3,7 @@
 Plugin Name: Drewery Caravan Park Days Out
 Plugin URI: https://github.com/gerrytucker/drewery-days-out
 Description: Manage Drewery Caravan Park Days Out
-Version: 1.1.7
+Version: 1.1.8
 Author: Gerry Tucker
 Author URI: http://github.com/gerrytucker/
 GitHub Plugin URI: https://github.com/gerrytucker/drewery-days-out
@@ -83,7 +83,6 @@ function ddo_days_out_meta_box_callback( $post )
 	);
 
 	$address = get_post_meta( $post->ID, '_ddo_address', true );
-	$address = wpautop( $address );
 	$uri = get_post_meta( $post->ID, '_ddo_uri', true );
 	$type = get_post_meta( $post->ID, '_ddo_type', true );
 
@@ -99,8 +98,8 @@ function ddo_days_out_meta_box_callback( $post )
 			<input type="url" id="ddo_uri" name="ddo_uri" required value="<?php echo $uri; ?>">
 		</p>
 		<p>
-			<input type="radio" name="ddo_type" id="att" value="ATT" <?php if ( $type == "ATT" || $type == "" ) echo 'checked="checked"'; ?>><label for="ddo_type"> Attraction</label><br>
-			<input type="radio" name="ddo_type" id="poi" value="POI" <?php if ( $type == "POI" ) echo 'checked="checked"'; ?>><label for="ddo_type"> Place Of Interest</label><br>
+			<input type="radio" name="ddo_type" id="att" value="ATT" <?php if ( $type == "ATT" || $type == "" ) echo 'checked="checked"'; ?>><label for="att"> Attraction</label><br>
+			<input type="radio" name="ddo_type" id="poi" value="POI" <?php if ( $type == "POI" ) echo 'checked="checked"'; ?>><label for="poi"> Place Of Interest</label><br>
 		</p>
 	</div>
 
