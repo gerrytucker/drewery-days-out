@@ -3,7 +3,7 @@
 Plugin Name: Drewery Caravan Park Days Out
 Plugin URI: https://github.com/gerrytucker/drewery-days-out
 Description: Manage Drewery Caravan Park Days Out
-Version: 1.0-rc1
+Version: 1.0-rc2
 Author: Gerry Tucker
 Author URI: http://github.com/gerrytucker/
 GitHub Plugin URI: https://github.com/gerrytucker/drewery-days-out
