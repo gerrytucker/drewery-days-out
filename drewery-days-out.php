@@ -3,7 +3,7 @@
 Plugin Name: Drewery Caravan Park Days Out
 Plugin URI: https://github.com/gerrytucker/drewery-days-out
 Description: Manage Dutchy's Tavern Events
-Version: 0.1
+Version: 1.0-rc1
 Author: Gerry Tucker
 Author URI: http://github.com/gerrytucker/
 GitHub Plugin URI: https://github.com/gerrytucker/drewery-days-out
@@ -84,6 +84,10 @@ function ddo_days_out_meta_box_callback( $post )
 	);
 
 	$address = get_post_meta( $post->ID, '_ddo_address', true );
+	$address = wp_autop( $address );
+	$uri = get_post_meta( $post->ID, '_ddo_uri', true );
+	$type = get_post_meta( $post->ID, '_ddo_type', true );
+
 ?>
 
 	<div style="margin: 10px;">
@@ -97,8 +101,8 @@ function ddo_days_out_meta_box_callback( $post )
 		</p>
 		<p>
 			<label for="ddo_type">Type:</label><br>
-			<input type="radio" name="ddo_type" value="Attraction"><br>
-			<input type="radio" name="ddo_type" value="Place of Interest">
+			<input type="radio" name="ddo_type" value="Attraction" <?php if ( $type == "ATT" ) echo "selected"; ?>><br>
+			<input type="radio" name="ddo_type" value="Place of Interest" <?php if ( $type == "POI" ) echo "selected"; ?>>
 		</p>
 	</div>
 
@@ -129,10 +133,21 @@ function ddo_days_out_save_meta_box_data( $post_id )
 			return;
 	}
 
-	if ( ! isset( $_POST['ddo_address'] ) )
+	if ( ! isset( $_POST['ddo_address'] ) && ! isset( $_POST['ddo_uri'] ) && ! isset( $_POST['ddo_type'] ) )
 		return;
 
 	$address = $_POST['ddo_address'];
+	update_post_meta( $post_id, '_ddo_address', $address );
+
+	$uri = $_POST['ddo_uri'];
+	update_post_meta( $post_id, '_ddo_uri', $uri );
+
+	$type = $_POST['ddo_type'];
+	if ( $type == "Attraction" ) {
+		$type = "ATT";
+	} else {
+		$type = "POI";
+	}
 
 	update_post_meta( $post_id, '_ddo_address', $address );
 
