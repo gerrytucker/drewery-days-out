@@ -2,7 +2,7 @@
 /*
 Plugin Name: Drewery Caravan Park Days Out
 Plugin URI: https://github.com/gerrytucker/drewery-days-out
-Description: Manage Dutchy's Tavern Events
+Description: Manage Drewery Caravan Park Days Out
 Version: 1.0-rc1
 Author: Gerry Tucker
 Author URI: http://github.com/gerrytucker/
@@ -48,7 +48,7 @@ function custom_post_types() {
 		'capability_type'     => 'page',
 		'menu_icon' => ''
 	);
-	register_post_type( 'event', $args );
+	register_post_type( 'daysout', $args );
 
 }
 // Hook into the 'init' action

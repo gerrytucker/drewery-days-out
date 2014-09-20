@@ -1,0 +1,15 @@
+@font-face {
+	font-family: 'drewery-days-out';
+	src:url('fonts/drewery-days-out.eot');
+	src:url('fonts/drewery-days-out.eot?#iefix') format('embedded-opentype'),
+		url('fonts/drewery-days-out.woff') format('woff'),
+		url('fonts/drewery-days-out.ttf') format('truetype'),
+		url('fonts/drewery-days-out.svg#drewery-days-out') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+#adminmenu .menu-icon-daysout div.wp-menu-image:before {
+	font-family: 'drewery-days-out';
+	content: '\e601';
+}
