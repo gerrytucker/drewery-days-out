@@ -70,7 +70,7 @@ function ddo_days_out_add_meta_box()
 		'ddo_days_out_meta_box_id',
 		__('Day Out Detail', 'drewery-days-out'),
 		'ddo_days_out_meta_box_callback',
-		'dayout'
+		'daysout'
 	);
 }
 add_action( 'add_meta_boxes', 'ddo_days_out_add_meta_box' );
