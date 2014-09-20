@@ -3,7 +3,7 @@
 Plugin Name: Drewery Caravan Park Days Out
 Plugin URI: https://github.com/gerrytucker/drewery-days-out
 Description: Manage Drewery Caravan Park Days Out
-Version: 1.1.3
+Version: 1.1.4
 Author: Gerry Tucker
 Author URI: http://github.com/gerrytucker/
 GitHub Plugin URI: https://github.com/gerrytucker/drewery-days-out
@@ -100,9 +100,8 @@ function ddo_days_out_meta_box_callback( $post )
 			<input type="url" id="ddo_uri" name="ddo_uri" required value="<?php echo $uri; ?>">
 		</p>
 		<p>
-			<label for="ddo_type">Type:</label><br>
-			<input type="radio" name="ddo_type" value="Attraction" <?php if ( $type == "ATT" ) echo "selected"; ?>><br>
-			<input type="radio" name="ddo_type" value="Place of Interest" <?php if ( $type == "POI" ) echo "selected"; ?>>
+			<input type="radio" name="ddo_type" value="ATT" <?php if ( $type == "ATT" || $type == "" ) echo "selected"; ?>><label for="ddo_type"> Attraction</label><br>
+			<input type="radio" name="ddo_type" value="POI" <?php if ( $type == "POI" ) echo "selected"; ?>><label for="ddo_type"> Place Of Interest</label><br>
 		</p>
 	</div>
 
