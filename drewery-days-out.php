@@ -3,7 +3,7 @@
 Plugin Name: Drewery Caravan Park Days Out
 Plugin URI: https://github.com/gerrytucker/drewery-days-out
 Description: Manage Drewery Caravan Park Days Out
-Version: 1.1.9
+Version: 1.1.10
 Author: Gerry Tucker
 Author URI: http://github.com/gerrytucker/
 GitHub Plugin URI: https://github.com/gerrytucker/drewery-days-out
@@ -29,7 +29,7 @@ function custom_post_types() {
 		'not_found_in_trash'  => __( 'Not found in Trash', 'text_domain' ),
 	);
 	$args = array(
-		'label'               => __( 'daysout', 'text_domain' ),
+		'label'               => __( 'dayout', 'text_domain' ),
 		'description'         => __( 'Day Out Post Type', 'text_domain' ),
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'author', 'thumbnail' ),
@@ -47,7 +47,7 @@ function custom_post_types() {
 		'capability_type'     => 'page',
 		'menu_icon' => ''
 	);
-	register_post_type( 'daysout', $args );
+	register_post_type( 'dayout', $args );
 
 }
 // Hook into the 'init' action
@@ -69,7 +69,7 @@ function ddo_days_out_add_meta_box()
 		'ddo_days_out_meta_box_id',
 		__('Day Out Detail', 'drewery-days-out'),
 		'ddo_days_out_meta_box_callback',
-		'daysout'
+		'dayout'
 	);
 }
 add_action( 'add_meta_boxes', 'ddo_days_out_add_meta_box' );
