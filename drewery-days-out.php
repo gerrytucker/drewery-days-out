@@ -3,7 +3,7 @@
 Plugin Name: Drewery Caravan Park Days Out
 Plugin URI: https://github.com/gerrytucker/drewery-days-out
 Description: Manage Drewery Caravan Park Days Out
-Version: 1.2.2
+Version: 1.2.3
 Author: Gerry Tucker
 Author URI: http://github.com/gerrytucker/
 GitHub Plugin URI: https://github.com/gerrytucker/drewery-days-out
@@ -147,8 +147,7 @@ function ddo_days_out_save_meta_box_data( $post_id )
 	update_post_meta( $post_id, '_ddo_uri', $uri );
 
 	$type = $_POST['ddo_type'];
-
-	update_post_meta( $post_id, '_ddo_address', $address );
+	update_post_meta( $post_id, '_ddo_type', $type );
 
 }
 add_action( 'save_post', 'ddo_days_out_save_meta_box_data' );
