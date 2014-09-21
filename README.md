@@ -1,6 +1,7 @@
-Drewery Cravan Park Days Out Plugin for WP
-==========================================
+Drewery Days Out Plugin for WP
+==============================
 
+1.1.9 Remove editor
 
 1.0 Release 1
 

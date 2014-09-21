@@ -1,7 +1,7 @@
 Changelog
 ---------
 
-1.1
+1.1.9 Remove editor
 
 1.0 Release 1
 
