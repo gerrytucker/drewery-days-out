@@ -9,7 +9,7 @@
 	font-style: normal;
 }
 
-#adminmenu .menu-icon-daysout div.wp-menu-image:before {
+#adminmenu .menu-icon-dayout div.wp-menu-image:before {
 	font-family: 'drewery-days-out';
 	content: '\e601';
 }
